@@ -1,32 +1,39 @@
-Telegram бот для учёта личных расходов и ведения бюджета, [видео с пояснениями по коду и описание](https://www.youtube.com/watch?v=Kh16iosOTIQ).
+# Telegram Financial Bot (Integrated Google Sheet APIs)
+
+Telegram bot for tracking personal expenses and budgeting, [video with explanations of the code and description](https://www.youtube.com/watch?v=Kh16iosOTIQ).
+
+In the environment variables, you need to specify the bot's API token, as well as the proxy address and login-password to it.
+
+## Contact me
+Telegram: [@derricklee918](https://t.me/@derricklee918)
 
 
-В переменных окружения надо проставить API токен бота, а также адрес proxy и логин-пароль к ней.
+## How to Run
 
-`TELEGRAM_API_TOKEN` — API токен бота
+`TELEGRAM_API_TOKEN` — API Bot Token
 
-`TELEGRAM_PROXY_URL` — URL прокси сервера
+`TELEGRAM_PROXY_URL` — Proxy Server URL
 
-`TELEGRAM_PROXY_LOGIN` — логин прокси сервера
+`TELEGRAM_PROXY_LOGIN` — proxy server login
 
-`TELEGRAM_PROXY_PASSWORD` — пароль прокси сервера
+`TELEGRAM_PROXY_PASSWORD` — proxy server password
 
-`TELEGRAM_ACCESS_ID` — ID Telegram аккаунта, от которого будут приниматься сообщения (сообщения от остальных аккаунтов игнорируются)
+`TELEGRAM_ACCESS_ID` — Telegram account ID from which messages will be received (messages from other accounts are ignored)
 
-Использование с Docker показано ниже. Предварительно заполните ENV переменные, указанные выше, в Dockerfile, а также в команде запуска укажите локальную директорию с проектом вместо `local_project_path`. SQLite база данных будет лежать в папке проекта `db/finance.db`.
+Usage with Docker is shown below. Pre-fill the ENV variables specified above in the Dockerfile, and also specify the local directory with the project instead of `local_project_path` in the run command. The SQLite database will be located in the project folder `db/finance.db`.
 
 ```
 docker build -t tgfinance ./
 docker run -d --name tg -v /local_project_path/db:/home/db tgfinance
 ```
 
-Чтобы войти в работающий контейнер:
+To enter a running container:
 
 ```
 docker exec -ti tg bash
 ```
 
-Войти в контейнере в SQL шелл:
+Login to SQL shell in container:
 
 ```
 docker exec -ti tg bash
