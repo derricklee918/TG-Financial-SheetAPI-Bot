@@ -5,7 +5,9 @@ Telegram bot for tracking personal expenses and budgeting, [video with explanati
 In the environment variables, you need to specify the bot's API token, as well as the proxy address and login-password to it.
 
 ## Contact me
-Telegram: [@derricklee918](https://t.me/@derricklee918)
+Telegram: [@dwlee918](https://t.me/@dwlee918)
+
+X: [@dwlee918](https://x.com.me/@dwlee918)
 
 
 ## How to Run
